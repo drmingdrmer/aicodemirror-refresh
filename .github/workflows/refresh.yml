@@ -27,5 +27,5 @@ jobs:
       run: |
         echo "${{ secrets.AICODEMIRROR_COOKIES }}" > aicodemirror_cookies.txt
         
-    - name: Run refresh script
-      run: python aicode.py refresh
+    # - name: Run refresh script
+    #   run: python aicode.py refresh
