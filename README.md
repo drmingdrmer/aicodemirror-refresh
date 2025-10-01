@@ -1,2 +1,36 @@
 # aicodemirror-refresh
-auto refresh the points on aicodemirror.com
+
+Automatically manages [AiCodeMirror](https://www.aicodemirror.com) credit resets via GitHub Actions.
+
+## Setup
+
+1. Fork this repo
+
+2. Get your cookies from `www.aicodemirror.com`
+
+   Use [Cookie-Editor](https://chromewebstore.google.com/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm) extension to export cookies. Format:
+   ```
+   __Host-authjs.csrf-token=...;__Secure-authjs.callback-url=...;__Secure-authjs.session-token=...;acw_tc=...
+   ```
+
+3. Set the above cookie string to `AICODEMIRROR_COOKIES` secret in GitHub repo settings so workflows can access your account.
+
+   Navigate to: `https://github.com/<your_user_name>/aicodemirror-refresh/settings/secrets/actions`
+
+   ![](https://github.com/user-attachments/assets/e32420c6-11b5-46b8-b3a2-41b0083a1852)
+
+## Workflows
+
+- **Daily Refresh**: Runs at 20:00 UTC daily, resets credits
+- **Hourly Status**: Runs every hour, checks status without resetting
+
+Both workflows support manual triggering.
+
+
+## Manual Usage
+
+```bash
+python aicode.py refresh  # Reset credits if available
+python aicode.py status   # Check status without resetting
+python aicode.py check    # Check status and log to credits_history.ndjson
+```

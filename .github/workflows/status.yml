@@ -1,12 +1,12 @@
-name: Daily Refresh
+name: Hourly Status
 
 on:
   schedule:
-    - cron: '0 20 * * *'  # Run every day at 20:00 UTC
+    - cron: '0 * * * *'  # Run every hour at minute 0
   workflow_dispatch:  # Allow manual triggering
 
 jobs:
-  refresh:
+  status:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,5 +27,5 @@ jobs:
       run: |
         echo "${{ secrets.AICODEMIRROR_COOKIES }}" > aicodemirror_cookies.txt
 
-    - name: Run refresh script
-      run: python aicode.py refresh
+    - name: Run status script
+      run: python aicode.py status
