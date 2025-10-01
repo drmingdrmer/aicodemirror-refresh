@@ -1,6 +1,14 @@
 # aicodemirror-refresh
 
-Automatically manages [AiCodeMirror](https://www.aicodemirror.com) credit resets via GitHub Actions.
+Automatically manages [AiCodeMirror](https://www.aicodemirror.com/register?invitecode=Q101D2) credit resets via GitHub Actions.
+
+[AiCodeMirror](https://www.aicodemirror.com/register?invitecode=Q101D2) 中国境内 一站式Vibe Coding:
+- 支持 Claude Code Sonnet 4.5
+- 支持 OpenAI Codex
+- 每天免费额度 2000 积分
+- 5000+ 用户
+- 全网价格最低
+
 
 ## Setup
 
